@@ -132,7 +132,7 @@ function jumpTo(d,c,dr){state={disease:d,className:c,drug:dr,dose:null};searchRe
 function clearSearch(){searchInput.value=’’;searchClear.classList.remove(‘show’);searchResultsEl.classList.remove(‘active’);searchInput.focus();}
 document.addEventListener(‘click’,function(e){if(!e.target.closest(’.search-wrap’))searchResultsEl.classList.remove(‘active’);});
 
-function esc(s){return s.replace(/’/g,”\’”).replace(/”/g,’"’);}
+function esc(s){return s.replace(/’/g,”'”).replace(/”/g,’"’);}
 function hlMatch(t,q){var i=t.toLowerCase().indexOf(q);if(i===-1)return t;return t.slice(0,i)+’<strong style="color:var(--accent)">’+t.slice(i,i+q.length)+’</strong>’+t.slice(i+q.length);}
 function smartRound(v){if(v>=100)return Math.round(v);if(v>=10)return Math.round(v*10)/10;if(v>=1)return Math.round(v*100)/100;return Math.round(v*1000)/1000;}
 function findNearest(s,t){var b=s[0],bd=Math.abs(s[0]-t);for(var i=1;i<s.length;i++){var d=Math.abs(s[i]-t);if(d<bd){b=s[i];bd=d;}}return b;}
